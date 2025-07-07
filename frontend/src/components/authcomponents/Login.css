@@ -1,0 +1,662 @@
+/* --- Out-of-the-box Animations for Login and Signup Screens --- */
+/* LOGIN PAGE: Aurora waves, floating lock, and parallax shapes */
+.login-bg-login {
+  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%, #7366ff 100%);
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+.login-bg-login::before, .login-bg-login::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 60%;
+  z-index: 0;
+  pointer-events: none;
+}
+.login-bg-login::before {
+  top: 0;
+  background: linear-gradient(120deg, #7366ff88 0%, #ff6bcb44 100%);
+  filter: blur(32px) opacity(0.7);
+  animation: auroraWave1 12s ease-in-out infinite alternate;
+}
+.login-bg-login::after {
+  bottom: 0;
+  background: linear-gradient(120deg, #20e3b288 0%, #7366ff44 100%);
+  filter: blur(40px) opacity(0.6);
+  animation: auroraWave2 14s ease-in-out infinite alternate;
+}
+@keyframes auroraWave1 {
+  0% { transform: translateY(-20px) scaleX(1); }
+  50% { transform: translateY(20px) scaleX(1.1); }
+  100% { transform: translateY(-20px) scaleX(1); }
+}
+@keyframes auroraWave2 {
+  0% { transform: translateY(20px) scaleX(1); }
+  50% { transform: translateY(-20px) scaleX(1.08); }
+  100% { transform: translateY(20px) scaleX(1); }
+}
+
+.login-shapes-login .shape1 {
+  animation: loginParallax1 7s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-login .shape2 {
+  animation: loginParallax2 8.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-login .shape3 {
+  animation: loginParallax3 6.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+@keyframes loginParallax1 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-40px) scale(1.12) rotate(-12deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes loginParallax2 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(30px) scale(0.92) rotate(10deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes loginParallax3 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-25px) scale(1.18) rotate(18deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+.login-lock-icon {
+  animation: lockFloat 2.5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55), lockGlow 2.5s infinite alternate;
+  filter: drop-shadow(0 0 8px #7366ff44);
+}
+@keyframes lockFloat {
+  0% { transform: translate(-50%, -50%) scale(1.1); }
+  50% { transform: translate(-50%, -60%) scale(1.18) rotate(-8deg); }
+  100% { transform: translate(-50%, -50%) scale(1.1); }
+}
+@keyframes lockGlow {
+  0% { filter: drop-shadow(0 0 8px #7366ff44); }
+  100% { filter: drop-shadow(0 0 18px #7366ffcc); }
+}
+
+/* SIGNUP PAGE: Shooting stars, floating shapes, and color aurora */
+.login-bg-signup {
+  background: linear-gradient(120deg, #fff1eb 0%, #ace0f9 100%, #ffecd2 100%);
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+.login-bg-signup::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: radial-gradient(circle at 70% 30%, #ffe06655 0%, #fffbe700 60%), radial-gradient(circle at 20% 80%, #ace0f955 0%, #fffbe700 60%);
+  filter: blur(40px) opacity(0.7);
+  z-index: 0;
+  pointer-events: none;
+  animation: signupAurora 18s ease-in-out infinite alternate;
+}
+@keyframes signupAurora {
+  0% { opacity: 0.7; filter: blur(40px) hue-rotate(0deg); }
+  50% { opacity: 1; filter: blur(60px) hue-rotate(30deg); }
+  100% { opacity: 0.7; filter: blur(40px) hue-rotate(-30deg); }
+}
+
+.login-shapes-signup .shape1 {
+  animation: signupFloat1 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape2 {
+  animation: signupFloat2 6.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape3 {
+  animation: signupFloat3 7.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape4 {
+  animation: signupFloat4 9s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape5 {
+  animation: signupFloat5 10s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+@keyframes signupFloat1 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-40px) scale(1.15) rotate(-12deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes signupFloat2 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(30px) scale(0.92) rotate(10deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes signupFloat3 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-25px) scale(1.18) rotate(18deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes signupFloat4 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(35px) scale(0.98) rotate(-8deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes signupFloat5 {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-20px) scale(1.12) rotate(6deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+.signup-stars {
+  position: absolute;
+  top: 10%;
+  right: 8%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.star {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #fffbe7 60%, #ffe066 100%);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%, 50% 70%,
+    21% 91%, 32% 57%, 2% 35%,
+    39% 35%
+  );
+  opacity: 0.85;
+  animation: starTwinkle 2.5s infinite alternate, starShoot 8s infinite linear;
+}
+.star1 { animation-delay: 0s, 0s; }
+.star2 { animation-delay: 0.8s, 2.5s; width: 16px; height: 16px; }
+.star3 { animation-delay: 1.4s, 5s; width: 12px; height: 12px; }
+@keyframes starTwinkle {
+  0% { opacity: 0.7; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.3); }
+  100% { opacity: 0.7; filter: brightness(1); }
+}
+@keyframes starShoot {
+  0% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
+  10% { opacity: 1; }
+  30% { transform: translateX(-60vw) translateY(20vh) scale(1.2); opacity: 0.7; }
+  60% { opacity: 0.5; }
+  100% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
+}
+/* --- Unique Animations for Login and Signup Screens --- */
+.login-bg-login {
+  animation: loginBgWaves 12s linear infinite alternate, gradientMove 14s ease-in-out infinite;
+  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%, #7366ff 100%);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+@keyframes loginBgWaves {
+  0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+  50% { background-position: 100% 50%; filter: hue-rotate(10deg); }
+  100% { background-position: 0% 50%; filter: hue-rotate(-10deg); }
+}
+
+.login-shapes-login .shape1 {
+  animation: loginShape1 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-login .shape2 {
+  animation: loginShape2 7.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-login .shape3 {
+  animation: loginShape3 5.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+@keyframes loginShape1 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.08) rotate(-8deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes loginShape2 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(20px) scale(0.95) rotate(8deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes loginShape3 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.12) rotate(12deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.login-lock-icon {
+  animation: lockBounce 2.5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55), lockGlow 2.5s infinite alternate;
+}
+@keyframes lockGlow {
+  0% { filter: drop-shadow(0 0 8px #7366ff44); }
+  100% { filter: drop-shadow(0 0 18px #7366ffcc); }
+}
+
+.login-bg-signup {
+  animation: signupBgAurora 16s linear infinite alternate, gradientMove 16s ease-in-out infinite;
+  background: linear-gradient(120deg, #fff1eb 0%, #ace0f9 100%, #ffecd2 100%);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+@keyframes signupBgAurora {
+  0% { background-position: 0% 50%; filter: hue-rotate(0deg) brightness(1); }
+  50% { background-position: 100% 50%; filter: hue-rotate(20deg) brightness(1.08); }
+  100% { background-position: 0% 50%; filter: hue-rotate(-20deg) brightness(1); }
+}
+
+.login-shapes-signup .shape1 {
+  animation: signupShape1 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape2 {
+  animation: signupShape2 6.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape3 {
+  animation: signupShape3 7.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape4 {
+  animation: signupShape4 9s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+.login-shapes-signup .shape5 {
+  animation: signupShape5 10s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+}
+@keyframes signupShape1 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-40px) scale(1.15) rotate(-12deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes signupShape2 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(30px) scale(0.92) rotate(10deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes signupShape3 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-25px) scale(1.18) rotate(18deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes signupShape4 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(35px) scale(0.98) rotate(-8deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes signupShape5 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.12) rotate(6deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.signup-stars .star {
+  animation: starTwinkle 2.5s infinite alternate, starFloat 6s infinite alternate;
+}
+@keyframes starFloat {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.1) rotate(8deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+/* --- Unique styles for Login and Signup pages --- */
+.login-bg-login {
+  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%, #7366ff 100%);
+  animation: gradientMove 14s ease-in-out infinite, bgPulse 6s ease-in-out infinite alternate;
+}
+.login-bg-signup {
+  background: linear-gradient(120deg, #fff1eb 0%, #ace0f9 100%, #ffecd2 100%);
+  animation: gradientMove 16s ease-in-out infinite, bgPulse 7s ease-in-out infinite alternate;
+}
+
+.login-form-login {
+  border: 2.5px solid #7366ff55;
+  box-shadow: 0 8px 32px 0 #7366ff22, 0 1.5px 8px 0 #ff6bcb22;
+}
+.login-form-signup {
+  border: 2.5px solid #20e3b255;
+  box-shadow: 0 8px 32px 0 #20e3b222, 0 1.5px 8px 0 #ffb34722;
+}
+
+/* Unique lock icon for login */
+.login-lock-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 2;
+  animation: lockBounce 2.5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  filter: drop-shadow(0 0 8px #7366ff44);
+}
+@keyframes lockBounce {
+  0%, 100% { transform: translate(-50%, -50%) scale(1.1); }
+  50% { transform: translate(-50%, -60%) scale(1.18); }
+}
+
+/* Unique stars for signup */
+.signup-stars {
+  position: absolute;
+  top: 10%;
+  right: 8%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.star {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #fffbe7 60%, #ffe066 100%);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%, 50% 70%,
+    21% 91%, 32% 57%, 2% 35%,
+    39% 35%
+  );
+  opacity: 0.85;
+  animation: starTwinkle 2.5s infinite alternate;
+}
+.star1 { animation-delay: 0s; }
+.star2 { animation-delay: 0.8s; width: 16px; height: 16px; }
+.star3 { animation-delay: 1.4s; width: 12px; height: 12px; }
+@keyframes starTwinkle {
+  0% { opacity: 0.7; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.3); }
+  100% { opacity: 0.7; filter: brightness(1); }
+}
+/* --- Enhanced Animations for Login & Signup Pages --- */
+.login-bg {
+  /* keep existing styles */
+  animation: gradientMove 12s ease-in-out infinite, bgPulse 6s ease-in-out infinite alternate;
+}
+@keyframes bgPulse {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.08); }
+  100% { filter: brightness(1); }
+}
+
+.login-animated-shapes .shape1, .login-animated-shapes .shape2, .login-animated-shapes .shape3, .login-animated-shapes .shape4, .login-animated-shapes .shape5 {
+  transition: box-shadow 0.5s, filter 0.5s;
+  box-shadow: 0 4px 32px 0 rgba(115, 102, 255, 0.10), 0 1.5px 8px 0 rgba(255, 107, 203, 0.10);
+  filter: brightness(1.1);
+}
+.login-animated-shapes .shape1 { animation-delay: 0s; }
+.login-animated-shapes .shape2 { animation-delay: 1.2s; }
+.login-animated-shapes .shape3 { animation-delay: 2.1s; }
+.login-animated-shapes .shape4 { animation-delay: 0.7s; }
+.login-animated-shapes .shape5 { animation-delay: 1.7s; }
+
+.login-form {
+  /* keep existing styles */
+  animation: floatCard 3.5s ease-in-out infinite alternate, formPopIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(255, 107, 203, 0.10);
+  background: rgba(255,255,255,0.97);
+  border: 1.5px solid #7366ff33;
+}
+@keyframes formPopIn {
+  0% { opacity: 0; transform: scale(0.85) translateY(40px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(-10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.login-title {
+  /* keep existing styles */
+  animation: fadeInDown 1s, titleGlow 2.5s ease-in-out infinite alternate;
+}
+@keyframes titleGlow {
+  0% { text-shadow: 0 2px 8px #7366ff22, 0 0 0 #fff; }
+  100% { text-shadow: 0 2px 16px #7366ff66, 0 0 8px #fff; }
+}
+
+.login-subtitle {
+  /* keep existing styles */
+  animation: fadeIn 1.2s, subtitleFadeIn 2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes subtitleFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.login-input {
+  /* keep existing styles */
+  transition: box-shadow 0.3s, border-color 0.3s, background 0.3s;
+  animation: fadeIn 1.3s;
+}
+.login-input:focus {
+  border-color: #8ec5fc;
+  box-shadow: 0 0 8px #8ec5fc55;
+  background: #fff;
+}
+
+.login-btn {
+  /* keep existing styles */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  animation: fadeIn 1.6s, btnPulse 2.5s ease-in-out infinite alternate;
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+  color: #222;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 4px 20px #8ec5fc44;
+}
+@keyframes btnPulse {
+  0% { box-shadow: 0 2px 12px #7366ff22; }
+  100% { box-shadow: 0 4px 24px #20e3b244; }
+}
+
+.login-footer {
+  /* keep existing styles */
+  animation: fadeIn 1.8s, footerSlideIn 2.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes footerSlideIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* Extra animated shapes for Signup page */
+.shape4, .shape5 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 1;
+}
+.shape4 {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  top: 60%;
+  left: 80%;
+  animation: float4 7s ease-in-out infinite;
+}
+.shape5 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+  top: 80%;
+  left: 10%;
+  animation: float5 9s ease-in-out infinite;
+}
+@keyframes float4 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.1); }
+}
+@keyframes float5 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(25px) scale(0.95); }
+}
+/* Success message for signup */
+.login-success {
+  color: #2ecc40;
+  background: #eafaf1;
+  border: 1px solid #2ecc40;
+  border-radius: 4px;
+  padding: 8px 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.login-bg {
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #ff6bcb, #7366ff, #20e3b2, #ff6bcb);
+  background-size: 800% 800%;
+  animation: gradientMove 18s ease-in-out infinite, bgPulse 6s ease-in-out infinite alternate;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Floating glassmorphism card with shadow */
+.login-form {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2rem;
+  box-shadow: 0 12px 40px 0 rgba(115, 102, 255, 0.15), 0 1.5px 8px 0 rgba(255, 107, 203, 0.10);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  width: 400px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2.5px solid #7366ff33;
+  transition: box-shadow 0.2s, transform 0.2s;
+  animation: floatCard 3.5s ease-in-out infinite alternate;
+}
+@keyframes floatCard {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-10px) scale(1.01); }
+}
+
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #7366ff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #7366ff22;
+  animation: fadeInDown 1s;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-subtitle {
+  color: #888;
+  margin-bottom: 1.5rem;
+  font-size: 1.08rem;
+  animation: fadeIn 1.2s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.login-input {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 1rem;
+  background: #f3f3f3;
+  font-size: 1.08rem;
+  transition: box-shadow 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px rgba(115, 102, 255, 0.06);
+}
+.login-input:focus {
+  outline: none;
+  border: 1.5px solid #7366ff;
+  box-shadow: 0 0 0 2px #7366ff33;
+  background: #fff;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.9rem 0;
+  background: linear-gradient(90deg, #7366ff 0%, #ff6bcb 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 1.1rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px #7366ff22;
+  animation: fadeIn 1.6s;
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #20e3b2 0%, #7366ff 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 20px #20e3b244;
+}
+
+.login-error {
+  color: #ff3b3b;
+  background: #ffeaea;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
+  animation: fadeIn 1.7s;
+}
+
+.login-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  animation: fadeIn 1.8s;
+}
+
+.login-link {
+  color: #7366ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.login-link:hover {
+  color: #ff6bcb;
+}
+
+.login-logo {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.2rem;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 2px 16px #7366ff33;
+  background: #fff;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+.login-logo:hover {
+  transform: scale(1.08) rotate(-8deg);
+}
+
+@media (max-width: 900px) {
+  .login-form {
+    width: 95vw;
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .login-animated-shapes {
+    display: none;
+  }
+}
